@@ -72,6 +72,11 @@ def post_daily():
 def home():
     return "Bot is running ✅"
 
+@app.route("/test")
+def test_post():
+    post_daily()
+    return "Test post sent to Telegram ✅"
+
 # ===== START =====
 if __name__ == "__main__":
     scheduler.add_job(post_daily, "cron", hour=9, minute=0)
